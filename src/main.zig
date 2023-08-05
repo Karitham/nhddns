@@ -37,7 +37,7 @@ pub fn main() !void {
 
     const result = try ddns.update(alloc, new_ip);
     switch (result) {
-        .NoChange => {},
+        .NoChange => std.log.info("no change", .{}),
         .Good => std.log.info("updated addr to: {}", .{new_ip}),
     }
 }
